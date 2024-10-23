@@ -1,5 +1,5 @@
 {
-    "name": "connectholland/cookie-consent-bundle",
+    "name": "asilingas/cookie-consent-bundle",
     "type": "symfony-bundle",
     "description": "Symfony bundle for implementing Cookie Consent to comply to AVG/GDPR.",
     "license": "MIT",
