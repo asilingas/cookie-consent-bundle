@@ -15,7 +15,7 @@ use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment;
@@ -89,11 +89,7 @@ class CookieConsentController
         $this->formAction              = $formAction;
     }
 
-    /**
-     * Show cookie consent.
-     *
-     * @Route("/cookie_consent", name="ch_cookie_consent.show")
-     */
+    #[Route('/cookie_consent', name: 'ch_cookie_consent.show')]
     public function show(Request $request): Response
     {
         $this->setLocale($request);
@@ -114,11 +110,7 @@ class CookieConsentController
         return $response;
     }
 
-    /**
-     * Show cookie consent.
-     *
-     * @Route("/cookie_consent_alt", name="ch_cookie_consent.show_if_cookie_consent_not_set")
-     */
+    #[Route('/cookie_consent_alt', name: 'ch_cookie_consent.show_if_cookie_consent_not_set')]
     public function showIfCookieConsentNotSet(Request $request): Response
     {
         if ($this->cookieChecker->isCookieConsentSavedByUser() === false) {
